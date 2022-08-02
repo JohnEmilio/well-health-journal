@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Well Health Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Well Health Journal</h1>
+        <ul class="nav">
+            <li class="navItem"><a href="/">Home</a></li>
+            <li class="navItem"><a href="/journal.ejs">Journal</a></li>
+        </ul>
+    </header>
+    <section class="hero journalHero">
+        <h1 class="heroHeading">My Journal:</h1>
+        <ul class="journalItems">
+        <% for(let i=0; i < items.length; i++) {%>
+            <li class="journalItem">
+                <span class='journalDate'><span class="journalEntryHeading">Date: </span><%= items[i].date %></span>
+                <span class='journalBp'><span class="journalEntryHeading">Blood Pressure: </span><%= items[i].bloodPressure %></span>
+                <span class='journalHr'><span class="journalEntryHeading">Heart Rate: </span><%= items[i].heartRate %></span>
+                <% if(items[i].exercise) { %>
+                    <span class='journalEx'><span class="journalEntryHeading">Exercise: </span>Exercised!</span>
+                <% } %>
+                <% if(!items[i].exercise) { %>
+                    <span class='journalEx'><span class="journalEntryHeading">Exercise: </span>No exercise today</span>
+                <% } %>
+                <span class='journalLog'><span class="journalEntryHeading">Journal Entry: </span><%= items[i].journal %></span>
+                <button class='deleteItem'>Delete</button>
+        <% } %>
+            </li>
+        </ul>
+    </section>
+    <script src='js/main.js'></script>
+</body>
+</html>

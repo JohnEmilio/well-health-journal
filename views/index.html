@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Well Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <ul class="nav">
+            <li class="navItem"><a href="/">Home</a></li>
+            <li class="navItem"><a href="/journal">Journal</a></li>
+        </ul>
+    </header>
+    <section class="hero">
+        <h1 class="heroHeading">How are you feeling today?</h1>
+        <form class="entryContainer" action="/addJournal" method="POST" class="entryForm">
+            <div class="vitalSigns">
+                <div class="bpContainer">
+                    <span>Blood Pressure</span>
+                    <input type="number" class="bpInput1 bpInput"/ name="bpNum1"><span>/</span><input type="number" class="bpInput2 bpInput" name="bpNum2"/>
+                </div>
+                <div class=hrContainer>
+                    <span>Heart Rate</span>
+                    <input type="number" class="hrInput" name="hrNum"/>
+                </div>
+                <div class="exContainer">
+                    <span>
+                        Exercise?
+                    </span>
+                    <input type="checkbox" class="exCheckbox"/ name="exCheck"><span>Check if yes</span>
+                </div>
+            </div>
+            <div class="journalContainer">
+                <h2>Journal:</h2>
+                <textarea type="text" class="journalText" name="journal" rows="8" cols="35" placeholder="Talk about your mood, your general wellness, what went well today or what didn't. What ever is important today."></textarea>
+            </div>
+            <input type="submit" value="Log Entry" class="entryBtn" />
+        </form>
+    </section>
+    <script src='js/main.js'></script>
+</body>
+</html>
