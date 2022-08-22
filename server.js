@@ -7,7 +7,7 @@ require('dotenv').config()
 let db,
     dbName = 'journal'
 
-MongoClient.connect("mongodb+srv://Jlewis1:4b3IS5gDGeCHs4U4@cluster0.xydqopj.mongodb.net/?retryWrites=true&w=majority", { useUnifiedTopology: true })
+MongoClient.connect("", { useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
